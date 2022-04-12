@@ -26,6 +26,7 @@ public:
         
         int s=0;
         int e=0;
+        int ans=-1;
         int n=weights.size();
         for(int i=0;i<n;i++){
             e+=weights[i];
@@ -36,6 +37,7 @@ public:
         while(s<=e){
             
             if(possible(weights,n,days,mid)){
+                ans=mid;
                 e=mid-1;
             
             }
