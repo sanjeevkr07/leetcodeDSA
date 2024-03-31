@@ -17,16 +17,14 @@ class Solution {
     public int findTotal(List<List<Integer>> triangle,int m,int n,int targetm,int targetn,int[][] dp){
         
         for(int i=targetm-1;i>=0;i--){
-            for(int j=targetn-1;j>=0;j--){
+            for(int j=i;j>=0;j--){
                 
-                //System.out.println(i+" "+j);
-                int left=Integer.MAX_VALUE;
-                int right=Integer.MAX_VALUE;
-                if(j<triangle.get(i).size()){
-                    left=dp[i+1][j]+triangle.get(i).get(j);
                 
-                    right=dp[i+1][j+1]+triangle.get(i).get(j);
-                }  
+                
+                    int left=dp[i+1][j]+triangle.get(i).get(j);
+                
+                    int right=dp[i+1][j+1]+triangle.get(i).get(j);
+            
                     
                
 
