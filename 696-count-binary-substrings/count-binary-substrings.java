@@ -21,7 +21,7 @@ class Solution {
 
     
 
-        System.out.println(list);
+        //System.out.println(list);
         return count;
     }
 }
