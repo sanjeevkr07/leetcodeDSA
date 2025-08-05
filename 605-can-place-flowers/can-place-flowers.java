@@ -23,7 +23,6 @@ class Solution {
             flowerbed[m-1]=1;
             flowersCanBeAdded++;
         }
-        System.out.println(flowersCanBeAdded);
         return n<=flowersCanBeAdded?true:false;
     }
 }
