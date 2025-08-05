@@ -4,20 +4,25 @@ class Solution {
         return false;
     }
     public String reverseVowels(String s) {
-        
-        Stack<Character> st = new Stack<>();
-
         StringBuilder str = new StringBuilder(s);
 
-        for(char c: s.toCharArray()){
-            if(isVowel(c)) st.push(c);
+        int i=0;
+        int j=s.length()-1;
+
+        while(i<j){
+
+
+            if(isVowel(s.charAt(i)) && isVowel(s.charAt(j))){
+                char temp = s.charAt(i);
+                str.setCharAt(i++,s.charAt(j));
+                str.setCharAt(j--,temp);
+                
+            }
+
+            if(!isVowel(s.charAt(i))) i++;
+            if(!isVowel(s.charAt(j))) j--;
         }
 
-        for(int i = 0; i<s.length() ; i++){
-            if(isVowel(s.charAt(i)))
-                str.setCharAt(i,st.pop());
-        }
-        
         return str.toString();
     }
 }
