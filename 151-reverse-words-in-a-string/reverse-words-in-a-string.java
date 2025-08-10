@@ -36,7 +36,6 @@ class Solution {
             i++;
             
         }
-        System.out.print(wordStack.toString());
         word.replace(0,word.length(),"");
         while(!wordStack.isEmpty()){
             word.append(wordStack.pop());
