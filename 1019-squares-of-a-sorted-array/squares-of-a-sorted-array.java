@@ -1,29 +1,34 @@
 class Solution {
     public int[] sortedSquares(int[] nums) {
         int n = nums.length;
-        for(int i = 0 ;i<n;i++){
-                nums[i]=nums[i]*nums[i];
-        }
-
         int[] result = new int[n];
-        int i=0;
-        int j=n-1;
+        int foldingPoint = -1;
+        //[0,2,3,4,5]
 
-        while(i<=j){
-            if(nums[i]>nums[j]){
-                result[n-1]=nums[i];
-                i++;
-            }
-            else{
-                result[n-1]=nums[j];
-                j--;
-            }
-             n--;   
+        for(int i = 0; i < n; i++){
+            if(nums[i]>=0 && foldingPoint<0) foldingPoint = i;
+            nums[i]=nums[i]*nums[i];
+        }
+        // System.out.println(foldingPoint);
+
+        if(foldingPoint==-1) foldingPoint=n-1;
+
+        int i = foldingPoint-1;
+        int j = foldingPoint;
+        int k = 0;
+
+        while(i>=0 && j<n){
+            if(nums[i]<nums[j])
+                result[k++] = nums[i--];
+            else
+                result[k++] = nums[j++];
+
         }
 
+        while(j<n) result[k++] = nums[j++];
+        while(i>=0) result[k++] = nums[i--];
 
-
-     
         return result;
+        
     }
 }
