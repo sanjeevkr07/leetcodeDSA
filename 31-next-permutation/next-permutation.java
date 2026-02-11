@@ -18,7 +18,7 @@ class Solution {
                 break;
             }
         }
-        System.out.println(pivot);
+        // System.out.println(pivot);
 
         if(pivot == -1) reverse(nums,0,n-1);
 
