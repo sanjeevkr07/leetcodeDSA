@@ -17,11 +17,12 @@ class Solution {
 
         while(right < s.length()){
             // System.out.println(map);
-            if(map.containsKey(s.substring(left,right+1))){
-                map.put(s.substring(left,right+1),2);
+            String sub = s.substring(left, right+1);
+            if(map.containsKey(sub)){
+                map.put(sub,2);
             }
             else{
-                map.put(s.substring(left,right+1),1);
+                map.put(sub,1);
             }
             right++;
             left++;
