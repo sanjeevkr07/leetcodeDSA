@@ -13,6 +13,8 @@ class Solution {
                     (c==closingArr[2] && ch==openingArr[2])    ) st.pop();
                     
                 else return false;
+            }else if(closing.test(c) && st.isEmpty()){
+                return false;
             }
             else{
                 st.push(c);
