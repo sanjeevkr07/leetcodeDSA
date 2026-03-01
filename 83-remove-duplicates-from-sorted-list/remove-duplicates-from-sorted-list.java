@@ -18,8 +18,7 @@ class Solution {
             while(curr.next!=null && curr.val == curr.next.val){
                 if(curr!=null)
                     curr.next = curr.next.next;
-                else
-                    curr.next =null;
+                
             }
 
             curr = curr.next;
