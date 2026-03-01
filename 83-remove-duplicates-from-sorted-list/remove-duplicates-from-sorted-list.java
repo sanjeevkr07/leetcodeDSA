@@ -16,7 +16,7 @@ class Solution {
         while(curr!=null && curr.next!=null){
             System.out.println(curr.val);
             while(curr.next!=null && curr.val == curr.next.val){
-                if(curr!=null)
+                
                     curr.next = curr.next.next;
                 
             }
