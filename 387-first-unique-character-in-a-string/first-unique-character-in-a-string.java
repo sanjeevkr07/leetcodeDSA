@@ -1,7 +1,7 @@
 class Solution {
     public int firstUniqChar(String s) {
         
-        HashMap<Character,Integer> mp = new LinkedHashMap<>();
+        HashMap<Character,Integer> mp = new HashMap<>();
 
         for(char c: s.toCharArray()){
             mp.put(c,mp.getOrDefault(c,0)+1);
