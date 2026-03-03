@@ -14,9 +14,6 @@ class Solution {
         l /= 2;
         o /= 2;
 
-        return Math.min(
-                Math.min(Math.min(b, a), l),
-                Math.min(o, n)
-        );
+        return Math.min(Math.min(Math.min(b, a), l),Math.min(o, n));
     }
 }
