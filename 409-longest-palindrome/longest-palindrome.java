@@ -2,21 +2,16 @@ class Solution {
     public int longestPalindrome(String s) {
         
         int[] freq = new int[128];
-        
+
         for(char c : s.toCharArray()){
             freq[c]++;
         }
-        
-        int length = 0;
-        
-        for(int count : freq){
-            length += (count / 2) * 2;
-            
-            if(length % 2 == 0 && count % 2 == 1){
-                length++;
-            }
+        boolean isOddPresent = false;
+        int count = 0;
+        for(int i : freq){
+            if(i % 2 !=0) isOddPresent = true;
+            count+=(i/2)* 2;
         }
-        
-        return length;
+        return isOddPresent ? count+1 : count;
     }
 }
