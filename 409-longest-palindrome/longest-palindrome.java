@@ -8,12 +8,9 @@ class Solution {
         boolean isOddPresent = false;
         int count = 0;
         for(char c : mp.keySet()){
-            if(mp.get(c) % 2 == 0) count+=mp.get(c);
-            else{
-                isOddPresent = true;
-                count+=(mp.get(c)/2)* 2;
-            }
+            if(mp.get(c) % 2 !=0) isOddPresent = true;
+            count+=(mp.get(c)/2)* 2;
         }
-        return isOddPresent ? count + 1 : count;
+        return isOddPresent ? count+1 : count;
     }
 }
