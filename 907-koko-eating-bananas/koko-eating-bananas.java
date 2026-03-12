@@ -14,12 +14,7 @@ class Solution {
     private boolean isPossible(int[] piles, int h, int k){
         int totalHours = 0 ;
         for(int i = 0 ; i < piles.length ; i++){
-            if(piles[i]%k == 0){
-                totalHours+= piles[i]/k;
-            }
-            else{
-                totalHours+= (piles[i]/k)+1;
-            }
+            totalHours += (piles[i] + k - 1) / k;
         }
         
         return totalHours <= h;
