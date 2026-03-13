@@ -20,11 +20,12 @@ class Solution {
     int currentLoad = 0;
 
     for (int w : weights) {
-        if(daysCount > days) return false;
 
         if (currentLoad + w > capacity) {
             daysCount++;
             currentLoad = 0;
+            if (daysCount > days) return false;
+
         }
 
         currentLoad += w;
