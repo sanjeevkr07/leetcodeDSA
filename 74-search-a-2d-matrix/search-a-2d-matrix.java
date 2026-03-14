@@ -12,7 +12,7 @@ class Solution {
 
             i = mid/n;
             j = mid%n;
-            System.out.println(i+" "+j);
+            // System.out.println(i+" "+j);
             if(matrix[i][j]== target) return true;
             else if(matrix[i][j] > target) right = mid - 1 ;
             else left = mid + 1;
